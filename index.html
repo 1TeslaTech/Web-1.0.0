@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Home Control</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="waves"></canvas>
+  <div id="login-page">
+    <div class="login-container">
+      <i class="fas fa-home login-icon"></i>
+      <h2>Smart Home Login</h2>
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button onclick="login()">Login</button>
+    </div>
+  </div>
+
+  <div id="control-page" style="display: none;">
+    <h1>Smart Home Control</h1>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+    <div class="connection-status">
+      <span class="status-dot"></span>
+      <span id="connection-text">Offline</span>
+    </div>
+    <div class="relay-container">
+      <div class="relay-box">
+        <h3>Relay 1</h3>
+        <button id="relay1" onclick="toggleRelay(1)" class="relay-btn">
+          <i class="fas fa-power-off"></i>
+        </button>
+        <p>Status: <span id="status1">OFF</span></p>
+      </div>
+      <div class="relay-box">
+        <h3>Relay 2</h3>
+        <button id="relay2" onclick="toggleRelay(2)" class="relay-btn">
+          <i class="fas fa-power-off"></i>
+        </button>
+        <p>Status: <span id="status2">OFF</span></p>
+      </div>
+      <div class="relay-box">
+        <h3>Relay 3</h3>
+        <button id="relay3" onclick="toggleRelay(3)" class="relay-btn">
+          <i class="fas fa-power-off"></i>
+        </button>
+        <p>Status: <span id="status3">OFF</span></p>
+      </div>
+      <div class="relay-box">
+        <h3>Relay 4</h3>
+        <button id="relay4" onclick="toggleRelay(4)" class="relay-btn">
+          <i class="fas fa-power-off"></i>
+        </button>
+        <p>Status: <span id="status4">OFF</span></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

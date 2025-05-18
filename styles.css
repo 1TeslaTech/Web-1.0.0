@@ -1,0 +1,265 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #121212;
+  color: #fff;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+#waves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  background: linear-gradient(145deg, #252525, #333333);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+}
+
+.login-icon {
+  font-size: 40px;
+  color: #bb86fc;
+  margin-bottom: 15px;
+}
+
+.login-container h2 {
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.login-container input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #4a4a4a;
+  color: #fff;
+  transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+.login-container input:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(187, 134, 252, 0.5);
+  background-color: #5a5a5a;
+}
+
+.login-container button {
+  padding: 12px;
+  width: 100%;
+  background: linear-gradient(90deg, #6200ea, #bb86fc);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.login-container button:hover {
+  background: linear-gradient(90deg, #7f39fb, #d0b0ff);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(187, 134, 252, 0.5);
+}
+
+#control-page {
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, #d32f2f, #f44336);
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.logout-btn:hover {
+  background: linear-gradient(90deg, #f44336, #ff6659);
+  transform: scale(1.05);
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ff1744;
+  transition: background-color 0.3s;
+}
+
+.status-dot.connected {
+  background-color: #00e676;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+#connection-text {
+  font-weight: 600;
+}
+
+#connection-text.connected {
+  color: #00e676;
+}
+
+.relay-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.relay-box {
+  background: linear-gradient(145deg, #252525, #333333);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.relay-box h3 {
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+.relay-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  width: 100%;
+  background: linear-gradient(90deg, #6200ea, #bb86fc);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.relay-btn.on {
+  background: linear-gradient(90deg, #00e676, #4caf50);
+}
+
+.relay-btn.off {
+  background: linear-gradient(90deg, #ff1744, #f44336);
+}
+
+.relay-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.relay-btn:active {
+  animation: pulse 0.3s ease-in-out;
+}
+
+.relay-btn i {
+  font-size: 24px;
+  transition: transform 0.3s;
+}
+
+.relay-btn.on i {
+  transform: rotate(90deg);
+}
+
+.relay-btn.off i {
+  transform: rotate(0deg);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.relay-box p {
+  margin: 10px 0 0;
+}
+
+.relay-box span {
+  font-weight: bold;
+  color: #00e676;
+}
+
+.relay-box span.off {
+  color: #ff1744;
+}
+
+@media (max-width: 600px) {
+  .relay-container {
+    grid-template-columns: 1fr;
+  }
+
+  .login-container,
+  #control-page {
+    padding: 10px;
+  }
+
+  .logout-btn {
+    top: 10px;
+    right: 10px;
+    padding: 8px 15px;
+  }
+
+  .relay-btn {
+    padding: 12px;
+  }
+
+  .relay-btn i {
+    font-size: 20px;
+  }
+
+  .connection-status {
+    font-size: 12px;
+  }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+  }
+}
