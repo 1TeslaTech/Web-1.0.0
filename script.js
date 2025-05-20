@@ -12,7 +12,7 @@ function login() {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  if (username === 'ali' && password === '4321') {
+  if (username === 'admin' && password === 'admin') {
     localStorage.setItem('isLoggedIn', 'true');
     document.getElementById('login-page').style.display = 'none';
     document.getElementById('control-page').style.display = 'block';
@@ -35,7 +35,7 @@ function logout() {
 
 function connectWebSocket() {
   console.log('Attempting to connect to WebSocket...');
-  ws = new WebSocket('ws://192.168.1.151:81');
+  ws = new WebSocket('ws://192.168.1.106:81');
 
   ws.onopen = () => {
     console.log('WebSocket connected successfully');
@@ -110,43 +110,72 @@ document.getElementById('password').addEventListener('keypress', function (e) {
   }
 });
 
-// افکت موج‌های نرم
-const canvas = document.getElementById('waves');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-const waves = [
-  { y: canvas.height * 0.3, amplitude: 20, frequency: 0.02, phase: 0 },
-  { y: canvas.height * 0.5, amplitude: 25, frequency: 0.015, phase: Math.PI / 2 },
-  { y: canvas.height * 0.7, amplitude: 15, frequency: 0.025, phase: Math.PI }
-];
-
-function drawWaves() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  waves.forEach(wave => {
-    ctx.beginPath();
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-    ctx.lineWidth = 2;
-    for (let x = 0; x < canvas.width; x++) {
-      const y = wave.y + Math.sin(x * wave.frequency + wave.phase) * wave.amplitude;
-      ctx.lineTo(x, y);
+// تنظیمات Particles.js
+particlesJS('particles-js', {
+  particles: {
+    number: {
+      value: 80,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    color: {
+      value: '#ffffff'
+    },
+    shape: {
+      type: 'circle'
+    },
+    opacity: {
+      value: 0.5,
+      random: true
+    },
+    size: {
+      value: 3,
+      random: true
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: '#ffffff',
+      opacity: 0.4,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 5,
+      direction: 'none',
+      random: false,
+      straight: false,
+      out_mode: 'out'
     }
-    ctx.stroke();
-    wave.phase += 0.05; // سرعت حرکت موج
-  });
-}
-
-function animateWaves() {
-  drawWaves();
-  requestAnimationFrame(animateWaves);
-}
-
-animateWaves();
-
-window.addEventListener('resize', () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
+  },
+  interactivity: {
+    detect_on: 'canvas',
+    events: {
+      onhover: {
+        enable: true,
+        mode: 'repulse'
+      },
+      onclick: {
+        enable: true,
+        mode: 'push'
+      },
+      resize: true
+    },
+    modes: {
+      repulse: {
+        distance: 100,
+        duration: 0.4
+      },
+      push: {
+        particles_nb: 4
+      }
+    }
+  },
+  retina_detect: true
+}, function() {
+  console.log('Particles.js loaded successfully!');
 });
 
 window.onload = checkLoginStatus;
