@@ -35,7 +35,7 @@ function logout() {
 
 function connectWebSocket() {
   console.log('Attempting to connect to WebSocket...');
-  ws = new WebSocket('ws://192.168.177.183:81');
+  ws = new WebSocket('ws://192.168.1.106:81');
 
   ws.onopen = () => {
     console.log('WebSocket connected successfully');
