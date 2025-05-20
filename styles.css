@@ -1,14 +1,14 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background: #121212;
-  color: #fff;
+  background: #070311; /* بنفش فوق‌العاده تیره */
+  color: #e0e0e0; /* سفید کم‌رنگ برای متن‌ها */
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
 }
 
-#waves {
+#particles-js {
   position: absolute;
   top: 0;
   left: 0;
@@ -25,11 +25,11 @@ body {
 }
 
 .login-container {
-  background: linear-gradient(145deg, #252525, #333333);
+  background: linear-gradient(145deg, #1a1033, #2a1f4d); /* گرادیانت بنفش خیلی تیره */
   padding: 30px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   width: 100%;
   max-width: 400px;
   backdrop-filter: blur(10px);
@@ -37,14 +37,14 @@ body {
 
 .login-icon {
   font-size: 40px;
-  color: #bb86fc;
+  color: #bb86fc; /* بنفش روشن */
   margin-bottom: 15px;
 }
 
 .login-container h2 {
   margin-bottom: 25px;
   font-weight: 600;
-  color: #e0e0e0;
+  color: #e0e0e0; /* سفید کم‌رنگ */
 }
 
 .login-container input {
@@ -54,21 +54,21 @@ body {
   margin: 15px 0;
   border: none;
   border-radius: 8px;
-  background-color: #4a4a4a;
-  color: #fff;
+  background-color: #251e44; /* بنفش خیلی تیره */
+  color: #e0e0e0;
   transition: box-shadow 0.3s, background-color 0.3s;
 }
 
 .login-container input:focus {
   outline: none;
-  box-shadow: 0 0 10px rgba(187, 134, 252, 0.5);
-  background-color: #5a5a5a;
+  box-shadow: 0 0 10px rgba(187, 134, 252, 0.7); /* بنفش روشن */
+  background-color: #352f66;
 }
 
 .login-container button {
   padding: 12px;
   width: 100%;
-  background: linear-gradient(90deg, #6200ea, #bb86fc);
+  background: linear-gradient(90deg, #6200ea, #bb86fc); /* گرادیانت بنفش */
   border: none;
   border-radius: 8px;
   color: #fff;
@@ -78,9 +78,9 @@ body {
 }
 
 .login-container button:hover {
-  background: linear-gradient(90deg, #7f39fb, #d0b0ff);
+  background: linear-gradient(90deg, #7b1fa2, #d0b0ff); /* بنفش روشن‌تر */
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(187, 134, 252, 0.5);
+  box-shadow: 0 0 15px rgba(187, 134, 252, 0.7);
 }
 
 #control-page {
@@ -96,7 +96,7 @@ body {
   top: 20px;
   right: 20px;
   padding: 10px 20px;
-  background: linear-gradient(90deg, #d32f2f, #f44336);
+  background: linear-gradient(90deg, #d32f2f, #7b1fa2); /* قرمز به بنفش */
   border: none;
   border-radius: 8px;
   color: #fff;
@@ -106,7 +106,7 @@ body {
 }
 
 .logout-btn:hover {
-  background: linear-gradient(90deg, #f44336, #ff6659);
+  background: linear-gradient(90deg, #f44336, #9c27b0);
   transform: scale(1.05);
 }
 
@@ -123,12 +123,12 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #ff1744;
+  background-color: #ff1744; /* قرمز تیره برای Offline */
   transition: background-color 0.3s;
 }
 
 .status-dot.connected {
-  background-color: #00e676;
+  background-color: #00e676; /* سبز روشن برای Online */
   animation: pulse 1s ease-in-out infinite;
 }
 
@@ -137,7 +137,7 @@ body {
 }
 
 #connection-text.connected {
-  color: #00e676;
+  color: #00e676; /* سبز روشن */
 }
 
 .relay-container {
@@ -149,15 +149,16 @@ body {
 }
 
 .relay-box {
-  background: linear-gradient(145deg, #252525, #333333);
+  background: linear-gradient(145deg, #1a1033, #2a1f4d); /* گرادیانت بنفش خیلی تیره */
   padding: 20px;
   border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 .relay-box h3 {
   margin: 0 0 10px;
   font-weight: 600;
+  color: #e0e0e0; /* سفید کم‌رنگ */
 }
 
 .relay-btn {
@@ -166,7 +167,7 @@ body {
   justify-content: center;
   padding: 15px;
   width: 100%;
-  background: linear-gradient(90deg, #6200ea, #bb86fc);
+  background: linear-gradient(90deg, #3c2f66, #5e35b1); /* بنفش تیره برای OFF */
   border: none;
   border-radius: 10px;
   color: #fff;
@@ -176,16 +177,16 @@ body {
 }
 
 .relay-btn.on {
-  background: linear-gradient(90deg, #00e676, #4caf50);
+  background: linear-gradient(90deg, #7b1fa2, #bb86fc); /* بنفش روشن برای ON */
 }
 
 .relay-btn.off {
-  background: linear-gradient(90deg, #ff1744, #f44336);
+  background: linear-gradient(90deg, #3c2f66, #5e35b1); /* بنفش تیره برای OFF */
 }
 
 .relay-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(187, 134, 252, 0.7);
 }
 
 .relay-btn:active {
@@ -223,11 +224,11 @@ body {
 
 .relay-box span {
   font-weight: bold;
-  color: #00e676;
+  color: #00e676; /* سبز روشن برای ON */
 }
 
 .relay-box span.off {
-  color: #ff1744;
+  color: #ff1744; /* قرمز تیره برای OFF */
 }
 
 @media (max-width: 600px) {
