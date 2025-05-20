@@ -12,7 +12,7 @@ function login() {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  if (username === 'admin' && password === 'admin') {
+  if (username === 'ali' && password === '1234') {
     localStorage.setItem('isLoggedIn', 'true');
     document.getElementById('login-page').style.display = 'none';
     document.getElementById('control-page').style.display = 'block';
