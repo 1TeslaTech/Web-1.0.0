@@ -12,7 +12,7 @@ function login() {
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
 
-  if (username === 'ali' && password === '1234') {
+  if (username === 'ali' && password === '4321') {
     localStorage.setItem('isLoggedIn', 'true');
     document.getElementById('login-page').style.display = 'none';
     document.getElementById('control-page').style.display = 'block';
@@ -35,7 +35,7 @@ function logout() {
 
 function connectWebSocket() {
   console.log('Attempting to connect to WebSocket...');
-  ws = new WebSocket('ws://192.168.1.106:81');
+  ws = new WebSocket('ws://192.168.1.151:81');
 
   ws.onopen = () => {
     console.log('WebSocket connected successfully');
